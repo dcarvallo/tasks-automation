@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "script para verificar los servicios web y conecciones funcionales"
 
-servicios=('apache' 'nginx' 'docker' 'postgresql' 'mysql')
+servicios=('apache' 'nginx' 'docker' 'postgresql' 'mysqld')
 
 for servicio in ${servicios[@]}
   do
