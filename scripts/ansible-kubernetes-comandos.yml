@@ -1,0 +1,21 @@
+---
+- name: playbook verificacion kubernetes con comandos
+  hosts: kubernetes
+  tasks:
+    - name: verificacion de nodos
+      command: "kubectl get nodes -o wide"
+      register: nodes
+    - debug: var=nodes.stdout
+    - name: Verificacion de pods
+      command: "kubectl get pods -o wide -n default"
+      register: pods
+    - debug: var=pods.stdout
+    - name: verificacion de servicios
+      command: "kubectl get services -o wide -n default"
+      register: servicios
+    - debug: var=servicios.stdout
+    - name: verificacion de replicasets
+      command: "kubectl get rs -o wide -n default"
+      register: rs
+    - debug: var=rs.stdout
+
